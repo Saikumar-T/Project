@@ -1,0 +1,240 @@
+INSERT INTO customer VALUES (9876543210,'Ramya','12-DEC-2018');
+INSERT INTO customer VALUES (9746532782,'Priya','11-JAN-2017');
+INSERT INTO customer VALUES (9437653245,'Thilags','10-MAR-2017');
+INSERT INTO customer VALUES (9645970888,'Nandhu','02-APR-2018');
+INSERT INTO customer VALUES (9892435622,'Shivu','01-JAN-2018');
+INSERT INTO customer VALUES (9657839284,'Dhinu','14-JUN-2016');
+INSERT INTO customer VALUES (9973653455,'Nithya','05-FEB-2017');
+INSERT INTO customer VALUES (9465328897,'Keerthi','13-MAY-2016');
+INSERT INTO customer VALUES (9827776471,'Saran','21-AUG-2016');
+INSERT INTO customer VALUES (9774456336,'Kavin','30-NOV-2018');
+INSERT INTO customer VALUES (9994434344,'Mohan','08-OCT-2018');
+INSERT INTO customer VALUES (9574764365,'Kowsi','17-APR-2017');
+INSERT INTO customer VALUES (9543464465,'Deepak','16-SEP-2016');
+INSERT INTO customer VALUES (9854875465,'Leela','24-AUG-2018');
+INSERT INTO customer VALUES (7664554653,'Sarika','27-SEP-2017');
+INSERT INTO customer VALUES (9434352424,'Swetha','04-JAN-2018');
+INSERT INTO customer VALUES (9434653244,'Teju','28-MAR-2016');
+INSERT INTO customer VALUES (9548845788,'Maddy','01-JUL-2017');
+INSERT INTO customer VALUES (9312121243,'Geetha','23-DEC-2018');
+INSERT INTO customer VALUES (9451424522,'Vidhya','21-APR-2016');
+
+
+INSERT INTO department VALUES (1,'Bakery and Bread');
+INSERT INTO department VALUES (2,'Meat and Seafood');
+INSERT INTO department VALUES (3,'Pasta and Rice');
+INSERT INTO department VALUES (4,'Cereals');
+INSERT INTO department VALUES (5,'Frozen food');
+INSERT INTO department VALUES (6,'Dairy Cheese and eggs');
+INSERT INTO department VALUES (7,'Snacks');
+INSERT INTO department VALUES (8,'Drinks');
+INSERT INTO department VALUES (9,'Produce');
+INSERT INTO department VALUES (10,'Oils and Sauces');
+
+
+
+INSERT INTO branch VALUES (10,'Perumpakkam','Nookampalayam Road, Perumpakkam, Chennai - 600100');
+INSERT INTO branch VALUES (20,'Egmore','New No. 101, Pantheon Road, Egmore, Chennai - 600008');
+INSERT INTO branch VALUES (30,'Thuraipakkam','No. 232, Nakshatra, Old Mahabalipuram Road, Okkiam Thuraipakkam, Chennai - 600097');
+
+
+
+INSERT INTO employee VALUES (101,'John',10,8744555559,'28-AUG-2016',40,1,'1,K.K.Nagar (West),Chennai','Baker',15000);
+INSERT INTO employee VALUES (102,'Hendry',20,7654685484,'23-JAN-2017',30,1,'106,J.N. Salai,Koyambedu,Chennai ','Baker',15000);
+INSERT INTO employee VALUES (103,'James',30,7654354444,'02-MAR-2018',24,1,'5,Vijaya Nagar,Velacheri,Chennai','Supervisor',20000);
+
+INSERT INTO employee VALUES (201,'William',10,9898647695,'12-JAN-2019',35,2,'17,Velmurugan Colony,Vadapalani,Chennai','Fish cutter',15000);
+INSERT INTO employee VALUES (202,'George',20,8754875421,'03-FEB-2016',34,2,'21,Sabari Street,Nesapakkam,Chennai','Fish cutter',14000);
+INSERT INTO employee VALUES (203,'Robert',30,7586694525,'24-MAY-2018',25,2,'7,Pavalamalli Street,Tiruvallur','Checkout supervisor',22000);
+
+INSERT INTO employee VALUES (301,'Frank',10,8775698547,'14-MAR-2017',43,3,'5,Sundaram Colony,Tambaram, Chennai ','Cashier',26000);
+INSERT INTO employee VALUES (302,'Thomas',20,9541236875,'12-AUG-2017',25,3,'18,Gopal street,Madipakkam, Chennai','Cashier',20000);
+INSERT INTO employee VALUES (303,'Edward',30,9523654785,'11-NOV-2016',26,3,'8 Bazaar Lane , Mylapore,Chennai ','Cashier',25000);
+
+INSERT INTO employee VALUES (401,'Mark',10,9211221012,'30-AUG-2018',35,4,'12/25, E.V.R. Stree, Nesapakkam,Chennai ','Sales executive',25000);
+INSERT INTO employee VALUES (402,'Nick',20,8523698547,'11-APR-2016',36,4,'15,New Perungalathur, Chennai','Sales executive',30000);
+INSERT INTO employee VALUES (403,'Jack',30,7562148965,'15-DEC-2017',26,4,'17,K.K.Nagar West,Chennai ','Sales executive',25000);
+
+INSERT INTO employee VALUES (501,'Harry',10,9012012587,'16-OCT-2017',26,5,'36,II nd Street,Koyambedu,Chennai','Manager',22000);
+INSERT INTO employee VALUES (502,'Rithika',20,8023654102,'20-JUN-2018',24,5,'Parvai Opticals,Egmore,Chennai','Manager',14000);
+INSERT INTO employee VALUES (503,'Renu',30,8756231402,'28-MAY-2016',36,5,'20,II Floor,Pallavaram, Chennai','Manager',30000);
+
+INSERT INTO employee VALUES (601,'Sri',10,7520332012,'02-JUL-2017',37,6,'203,Kutchery Road,Mylapore, Chennai','Clerk',32000);
+INSERT INTO employee VALUES (602,'Riya',20,8520123012,'07-SEP-2017',24,6,'21,Nallappan Steet,Mylapore, Chennai','Clerk',15000);
+INSERT INTO employee VALUES (603,'Anurag',30,7520101013,'10-OCT-2016',26,6,'57/27, Mosque Street,Saidapet, chennai','Supervisor',22000);
+
+INSERT INTO employee VALUES (701,'Ram',10,6852101254,'11-NOV-2018',38,7,'41,Madambakkam, chennai','Floor clerk',31000);
+INSERT INTO employee VALUES (702,'Oliver',20,6589745210,'06-JUL-2017',25,7,'4,Saidapet, Chennai','Floor clerk',17000);
+INSERT INTO employee VALUES (703,'Leo',30,9222012012,'01-APR-2016',28,7,'2,Perumal Nagar,Old Pallavaram,Chennai','Floor clerk',25000);
+
+INSERT INTO employee VALUES (801,'Jacob',10,9520101478,'13-JAN-2017',38,8,'55,Pillayar Koil Street,Triplicane, Chennai','Sales person',30000);
+INSERT INTO employee VALUES (802,'Oscar',20,7852145555,'16-FEB-2017',24,8,'14,Pilliyar koil Street,Mylapore, Chennai ','Sales person',15000);
+INSERT INTO employee VALUES (803,'Milo',30,8544566547,'25-MAY-2019',25,8,'13, Paladeeswarar Koil Steet,Chennai','Sales person',14000);
+
+INSERT INTO employee VALUES (901,'Oliva',10,9011474110,'30-AUG-2016',25,9,'16,I Cross Street,Selaiyur,Chennai','Delivery boy',15000);
+INSERT INTO employee VALUES (902,'Mia',20,9652552563,'26-SEP-2017',36,9,'4,Yogeswaran Street,Ullagaram, Chennai','Delivery boy',30000);
+INSERT INTO employee VALUES (903,'Vanessa',30,8565654252,'17-OCT-2016',27,9,'41,Kaladipet Tiruvetriyur,Chennai','Delivery boy',25000);
+
+INSERT INTO employee VALUES (1001,'Tony',10,9525699900,'12-DEC-2017',35,10,'22,Alwarthiru Nagar, Chennai','Market executive',28000);
+INSERT INTO employee VALUES (1002,'July',20,9022021105,'09-OCT-2016',26,10,'21 ,3rd Cross Street,Valasaravakkam, Chennai ','Market executive',24000);
+INSERT INTO employee VALUES (1003,'Jacki',30,9544787875,'10-NOV-2018',30,10,'214, Mannurpet,Chennai ','Market executive',19000);
+
+
+
+
+
+INSERT INTO wallet VALUES (6543,9876543210,150);
+INSERT INTO wallet VALUES (1234,9746532782,200);
+INSERT INTO wallet VALUES (2345,9437653245,300);
+INSERT INTO wallet VALUES (3456,9645970888,125);
+INSERT INTO wallet VALUES (4567,9892435622,245);
+INSERT INTO wallet VALUES (5678,9657839284,270);
+INSERT INTO wallet VALUES (6789,9973653455,345);
+INSERT INTO wallet VALUES (7890,9465328897,270);
+INSERT INTO wallet VALUES (8901,9827776471,150);
+INSERT INTO wallet VALUES (9012,9774456336,250);
+INSERT INTO wallet VALUES (1456,9994434344,155);
+INSERT INTO wallet VALUES (4356,9574764365,275);
+INSERT INTO wallet VALUES (5435,9543464465,350);
+INSERT INTO wallet VALUES (4655,9854875465,540);
+INSERT INTO wallet VALUES (7987,7664554653,620);
+INSERT INTO wallet VALUES (9877,9434352424,240);
+INSERT INTO wallet VALUES (7654,9434653244,250);
+INSERT INTO wallet VALUES (4656,9548845788,300);
+INSERT INTO wallet VALUES (9788,9312121243,150);
+INSERT INTO wallet VALUES (6544,9451424522,145);
+
+
+INSERT INTO item VALUES (123,'Canyon','Whole wheat bread',40,1,250);
+INSERT INTO item VALUES (234,'Royal cake','Cup cake',15,1,10);
+INSERT INTO item VALUES (233,'Rawas','Indian salmon',200,2,250);
+INSERT INTO item VALUES (765,'Suguna','Chicken boneless wings',200,2,250);
+INSERT INTO item VALUES (456,'Pride of india','Brown basmati rice',250,3,300);
+INSERT INTO item VALUES (876,'Sunfeast','Pasta',100,3,40);
+INSERT INTO item VALUES (456,'Kelloggs','Corn flacks',300,4,500);
+INSERT INTO item VALUES (546,'Kwality','Choco flacks'190,4,100);
+INSERT INTO item VALUES (987,'Natierra','Freeze-dried raspberries',400,5,40);
+INSERT INTO item VALUES (932,'Amul','Ice cream choco chips',190,5,1000);
+INSERT INTO item VALUES (277,'Dr.cow','Milk',50,6,500);
+INSERT INTO item VALUES (433,'Amul','Cheese cubes',100,6,250);
+INSERT INTO item VALUES (887,'Lays','Potato chips',20,7,100);
+INSERT INTO item VALUES (664,'Britannia','Marie gold biscuits',25,7,200);
+INSERT INTO item VALUES (634,'Tropicana','Juice',20,8,250);
+INSERT INTO item VALUES (553,'Kinley','Soda',20,8,200);
+INSERT INTO item VALUES (732,'Peak','Apple',100,9,250);
+INSERT INTO item VALUES (324,'Green farms','Carrot',50,9,500);
+INSERT INTO item VALUES (754,'Flora','Olive oil',1000,10,500);
+INSERT INTO item VALUES (376,'Maggi','Tomato sauce'100,10,1000);
+
+
+INSERT INTO quantity VALUES (123,2,1000);
+INSERT INTO quantity VALUES (233,2,1000);
+INSERT INTO quantity VALUES (987,1,1000);
+INSERT INTO quantity VALUES (664,5,1000);
+INSERT INTO quantity VALUES (456,3,1001);
+INSERT INTO quantity VALUES (932,1,1001);
+INSERT INTO quantity VALUES (376,3,1001);
+INSERT INTO quantity VALUES (553,1,1002);
+INSERT INTO quantity VALUES (732,2,1002);
+INSERT INTO quantity VALUES (234,10,1002);
+INSERT INTO quantity VALUES (546,1,1002);
+INSERT INTO quantity VALUES (433,1,1003);
+INSERT INTO quantity VALUES (987,1,1003);
+INSERT INTO quantity VALUES (277,2,1003);
+INSERT INTO quantity VALUES (887,3,1003);
+INSERT INTO quantity VALUES (634,2,1004);
+INSERT INTO quantity VALUES (732,2,1004);
+INSERT INTO quantity VALUES (324,1,1004);
+INSERT INTO quantity VALUES (754,1,1005);
+INSERT INTO quantity VALUES (376,1,1005);
+INSERT INTO quantity VALUES (765,2,1005);
+INSERT INTO quantity VALUES (456,4,1005);
+INSERT INTO quantity VALUES (546,2,1005);
+INSERT INTO quantity VALUES (932,1,1006);
+INSERT INTO quantity VALUES (277,1,1006);
+INSERT INTO quantity VALUES (664,2,1006);
+INSERT INTO quantity VALUES (732,2,1006);
+INSERT INTO quantity VALUES (324,1,1007);
+INSERT INTO quantity VALUES (376,2,1007);
+INSERT INTO quantity VALUES (123,2,1007);
+INSERT INTO quantity VALUES (234,5,1007);
+INSERT INTO quantity VALUES (765,1,1008);
+INSERT INTO quantity VALUES (456,2,1008);
+INSERT INTO quantity VALUES (456,4,1009);
+INSERT INTO quantity VALUES (546,3,1009);
+INSERT INTO quantity VALUES (277,2,1009);
+INSERT INTO quantity VALUES (553,2,1010);
+INSERT INTO quantity VALUES (732,3,1010);
+INSERT INTO quantity VALUES (754,3,1010);
+INSERT INTO quantity VALUES (932,2,1010);
+INSERT INTO quantity VALUES (234,3,1011);
+INSERT INTO quantity VALUES (233,2,1011);
+INSERT INTO quantity VALUES (987,2,1011);
+INSERT INTO quantity VALUES (887,3,1011);
+INSERT INTO quantity VALUES (664,2,1012);
+INSERT INTO quantity VALUES (553,3,1012);
+INSERT INTO quantity VALUES (324,3,1012);
+INSERT INTO quantity VALUES (376,2,1012);
+INSERT INTO quantity VALUES (987,1,1013);
+INSERT INTO quantity VALUES (932,2,1013);
+INSERT INTO quantity VALUES (887,2,1013);
+INSERT INTO quantity VALUES (664,3,1013);
+INSERT INTO quantity VALUES (456,2,1014);
+INSERT INTO quantity VALUES (277,3,1014);
+INSERT INTO quantity VALUES (433,2,1014);
+INSERT INTO quantity VALUES (664,3,1014);
+INSERT INTO quantity VALUES (987,2,1015);
+INSERT INTO quantity VALUES (887,2,1015);
+INSERT INTO quantity VALUES (634,3,1015);
+INSERT INTO quantity VALUES (433,2,1015);
+INSERT INTO quantity VALUES (754,2,1016);
+INSERT INTO quantity VALUES (376,3,1016);
+INSERT INTO quantity VALUES (233,2,1016);
+INSERT INTO quantity VALUES (765,1,1016);
+INSERT INTO quantity VALUES (546,3,1017);
+INSERT INTO quantity VALUES (433,2,1017);
+INSERT INTO quantity VALUES (876,2,1017);
+INSERT INTO quantity VALUES (634,3,1017);
+INSERT INTO quantity VALUES (456,3,1018);
+INSERT INTO quantity VALUES (277,2,1018);
+INSERT INTO quantity VALUES (664,1,1018);
+INSERT INTO quantity VALUES (376,3,1018);
+INSERT INTO quantity VALUES (123,2,1019);
+INSERT INTO quantity VALUES (876,2,1019);
+INSERT INTO quantity VALUES (765,3,1020);
+INSERT INTO quantity VALUES (887,2,1020);
+INSERT INTO quantity VALUES (324,1,1020);
+
+
+
+INSERT INTO checkout VALUES ('Green basket',10,1000,9876543210,'18-DEC-2018',);
+INSERT INTO checkout VALUES ('Green basket',20,1001,9746532782,'01-JAN-2019',);
+INSERT INTO checkout VALUES ('Green basket',30,1002,9437653245,'10-JAN-2019',);
+INSERT INTO checkout VALUES ('Green basket',30,1003,9645970888,'20-FEB-2019',);
+INSERT INTO checkout VALUES ('Green basket',20,1004,9892435622,'28-FEB-2019',);
+INSERT INTO checkout VALUES ('Green basket',30,1005,9657839284,'02-MAR-2019',);
+INSERT INTO checkout VALUES ('Green basket',10,1006,9973653455,'04-MAR-2019',);
+INSERT INTO checkout VALUES ('Green basket',20,1007,9465328897,'15-MAR-2019',);
+INSERT INTO checkout VALUES ('Green basket',30,1008,9827776471,'20-MAR-2019',);
+INSERT INTO checkout VALUES ('Green basket',10,1009,9774456336,'23-MAR-2019',);
+INSERT INTO checkout VALUES ('Green basket',20,1010,9994434344,'28-MAR-2019',);
+INSERT INTO checkout VALUES ('Green basket',30,1011,9574764365,'02-APR-2019',);
+INSERT INTO checkout VALUES ('Green basket',30,1012,9543464465,'12-APR-2019',);
+INSERT INTO checkout VALUES ('Green basket',20,1013,9854875465,'17-APR-2019',);
+INSERT INTO checkout VALUES ('Green basket',30,1014,7664554653,'20-APR-2019',);
+INSERT INTO checkout VALUES ('Green basket',10,1015,9434352424,'25-APR-2019',);
+INSERT INTO checkout VALUES ('Green basket',30,1016,9434653244,'03-MAY-2019',);
+INSERT INTO checkout VALUES ('Green basket',20,1017,9548845788,'05-MAY-2019',);
+INSERT INTO checkout VALUES ('Green basket',30,1018,9312121243,'10-MAY-2019',);
+INSERT INTO checkout VALUES ('Green basket',30,1019,9451424522,'12-MAY-2019',);
+INSERT INTO checkout VALUES ('Green basket',10,1020,9876543210,'18-MAY-2019',);
+INSERT INTO checkout VALUES ('Green basket',20,1021,9437653245,'22-MAY-2019',);
+INSERT INTO checkout VALUES ('Green basket',10,1022,9973653455,'30-MAY-2019',);
+INSERT INTO checkout VALUES ('Green basket',30,1023,9774456336,'04-JUN-2019',);
+INSERT INTO checkout VALUES ('Green basket',30,1024,9994434344,'08-JUN-2019',);
+INSERT INTO checkout VALUES ('Green basket',20,1025,9548845788,'15-JUN-2019',);
+INSERT INTO checkout VALUES ('Green basket',10,1026,9451424522,'20-JUN-2019',);
+INSERT INTO checkout VALUES ('Green basket',30,1027,9973653455,'25-JUN-2019',);
+INSERT INTO checkout VALUES ('Green basket',20,1028,9746532782,'28-JUN-2019',);
+INSERT INTO checkout VALUES ('Green basket',30,1029,9994434344,'07-JUL-2019',);
+INSERT INTO checkout VALUES ('Green basket',10,1030,9746532782,'10-JUL-2019',);
