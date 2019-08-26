@@ -1,0 +1,20 @@
+DROP TABLE users;
+
+CREATE TABLE users(username VARCHAR2(30),
+name VARCHAR2(30),password VARCHAR2(10), city VARCHAR2(20), 
+user_area VARCHAR2(20), mobileno NUMBER(10),CONSTRAINT u_pk PRIMARY KEY(username));
+
+insert into users values('t.v.r.sai01@gmail.com','saikumar','saisai123','chennai','sipcot',8096413585);
+insert into users values('murthy@gmail.com','srinivas','murthyc1','chennai','navalur',8500204179);
+insert into users values('jibabrah@gmail.com','jibin','rawagent','banglore','marathahalli',8123654789);
+insert into users values('pavan@gmail.com','pavan','pavan123','hyderabad','jntu',9876413585);
+insert into users values('ramya@gmail.com','ramya','rams@nanda,'chennai','khazipattur',8789456123);
+insert into users values('geetha@gmail.com','geetha','ggummadi','hyderabad','gachibowli',9632588585);
+insert into users values('karthick2@gmail.com','karthick','karthich321','banglore','whitefield',6547893211);
+insert into users values('madhu@gmail.com','madhumitha','897456987','pune','hinjewadi',7894563585);
+insert into users values('shalini@gmail.com','shalini','pathak123','kolkata','tagorepark',6541233585);
+insert into users values('navya@gmail.com','naavya','thati222','kolkata','tagorepark',8096498745);
+
+
+
+
