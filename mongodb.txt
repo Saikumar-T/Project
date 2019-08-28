@@ -1,0 +1,471 @@
+> show dbs
+local  0.000GB
+> use geetha
+switched to db geetha
+> show dbs
+local  0.000GB
+> db.users.insertOne({name:"sam",age:21,status:"pending"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5d636773fdf43bd91c473052")
+}
+> db.users.insertOne({name:"geetha",age:"21",status:"completed"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5d6367d9fdf43bd91c473053")
+}
+> db.users.insertOne({name:"yamini",age:"21",status:"completed"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5d6367effdf43bd91c473054")
+}
+> db.users.insertOne({name:"kiran",age:"21",status:"completed"})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5d6367fbfdf43bd91c473055")
+}
+
+> db.users.find()
+{ "_id" : ObjectId("5d636773fdf43bd91c473052"), "name" : "sam", "age" : 21, "status" : "pending" }
+{ "_id" : ObjectId("5d6367d9fdf43bd91c473053"), "name" : "geetha", "age" : "21", "status" : "completed" }
+{ "_id" : ObjectId("5d6367effdf43bd91c473054"), "name" : "yamini", "age" : "21", "status" : "completed" }
+{ "_id" : ObjectId("5d6367fbfdf43bd91c473055"), "name" : "kiran", "age" : "21", "status" : "completed" }
+> db.emp.insertOne({empno:9001,ename:"geetha",deptno:20,salary:30000})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5d636981fdf43bd91c473056")
+}
+> db.emp.insertOne({empno:9002,ename:"teja",deptno:30,salary:2500})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5d63699efdf43bd91c473057")
+}
+> db.emp.insertOne({empno:9003,ename:"yamini",deptno:10,salary:30000})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5d6369c4fdf43bd91c473058")
+}
+> db.emp.insertOne({empno_id:9004,ename:"yamini",deptno:10,salary:30000})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5d6369d7fdf43bd91c473059")
+}
+
+> db.emp.insertOne({"_id":9005,ename:"yamini",deptno:10,salary:30000})
+{ "acknowledged" : true, "insertedId" : 9005 }
+> db.emp.insertOne({"_id":9006,ename:"kiran",deptno:10,salary:30000})
+{ "acknowledged" : true, "insertedId" : 9006 }
+> db.emp.find()
+{ "_id" : ObjectId("5d636981fdf43bd91c473056"), "empno" : 9001, "ename" : "geetha", "deptno" : 20, "salary" : 30000 }
+{ "_id" : ObjectId("5d63699efdf43bd91c473057"), "empno" : 9002, "ename" : "teja", "deptno" : 30, "salary" : 2500 }
+{ "_id" : ObjectId("5d6369c4fdf43bd91c473058"), "empno" : 9003, "ename" : "yamini", "deptno" : 10, "salary" : 30000 }
+{ "_id" : ObjectId("5d6369d7fdf43bd91c473059"), "empno_id" : 9004, "ename" : "yamini", "deptno" : 10, "salary" : 30000 }
+{ "_id" : 9005, "ename" : "yamini", "deptno" : 10, "salary" : 30000 }
+{ "_id" : 9006, "ename" : "kiran", "deptno" : 10, "salary" : 30000 }
+> db.emp.insertOne({"_id":9007,ename:"anju",deptno:10,salary:30000})
+{ "acknowledged" : true, "insertedId" : 9007 }
+> db.emp.insertOne({"_id":9008,ename:"anju",deptno:20,salary:7000})
+{ "acknowledged" : true, "insertedId" : 9008 }
+> db.emp.find()
+{ "_id" : ObjectId("5d636981fdf43bd91c473056"), "empno" : 9001, "ename" : "geetha", "deptno" : 20, "salary" : 30000 }
+{ "_id" : ObjectId("5d63699efdf43bd91c473057"), "empno" : 9002, "ename" : "teja", "deptno" : 30, "salary" : 2500 }
+{ "_id" : ObjectId("5d6369c4fdf43bd91c473058"), "empno" : 9003, "ename" : "yamini", "deptno" : 10, "salary" : 30000 }
+{ "_id" : ObjectId("5d6369d7fdf43bd91c473059"), "empno_id" : 9004, "ename" : "yamini", "deptno" : 10, "salary" : 30000 }
+{ "_id" : 9005, "ename" : "yamini", "deptno" : 10, "salary" : 30000 }
+{ "_id" : 9006, "ename" : "kiran", "deptno" : 10, "salary" : 30000 }
+{ "_id" : 9007, "ename" : "anju", "deptno" : 10, "salary" : 30000 }
+{ "_id" : 9008, "ename" : "anju", "deptno" : 20, "salary" : 7000 }
+> db.emp.insertMany([{"_id":9009,ename:"madhu",deptno:20,salary:7000},{"_id":9010,ename:"yesh",deptno:20,salary:7000}])
+{ "acknowledged" : true, "insertedIds" : [ 9009, 9010 ] }
+> db.emp.insertMany([{"_id":9011,ename:"madhu",deptno:20},{"_id":9012,ename:"yesh",deptno:20}])
+{ "acknowledged" : true, "insertedIds" : [ 9011, 9012 ] }
+> db.emp.drop()
+true
+> db.emp.find()
+> db.emp.insertMany([{"_id":7369,ename:"SMITH",job:"CLERK",mgcode:7902,hiredate:"17-DEC-80",comm:null,deptno:10},
+... {"_id":7499,ename:"ALLEN",job:"SALESMAN",mgcode:7698,hiredate:"20-FEB-81",comm:1600,deptno:30},
+... {"_id":7521,ename:"WARD",job:"SALESMAN",mgcode:7698,hiredate:"22-FEB-81",comm:1250,deptno:30},
+... {"_id":7566,ename:"JONES",job:"MANAGER",mgcode:7839,hiredate:"02-APR-81",comm:2975,deptno:20},
+... {"_id":7654,ename:"MARTIN",job:"SALESMAN",mgcode:7698,hiredate:"28-SEP-81",comm:1250,deptno:30},
+... {"_id":7698,ename:"BLAKE",job:"MANAGER",mgcode:7839,hiredate:"01-MAY-81",comm:2850,deptno:30}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                7369,
+                7499,
+                7521,
+                7566,
+                7654,
+                7698
+        ]
+}
+> db.emp.drop()
+true
+> db.emp.insertMany([{"_id":7369,ename:"SMITH",job:"CLERK",mgcode:7902,hiredate:"17-DEC-80",salary:10,comm:null,deptno:10},
+... {"_id":7499,ename:"ALLEN",job:"SALESMAN",mgcode:7698,hiredate:"20-FEB-81",salary:1600,comm:300,deptno:30},
+... {"_id":7521,ename:"WARD",job:"SALESMAN",mgcode:7698,hiredate:"22-FEB-81",salary:1250,comm:500,deptno:30},
+... {"_id":7566,ename:"JONES",job:"MANAGER",mgcode:7839,hiredate:"02-APR-81",salary:2975,comm:null,deptno:20},
+... {"_id":7654,ename:"MARTIN",job:"SALESMAN",mgcode:7698,hiredate:"28-SEP-81",salary:1250,comm:1400,deptno:30},
+... {"_id":7698,ename:"BLAKE",job:"MANAGER",mgcode:7839,hiredate:"01-MAY-81",salary:2850,comm:null,deptno:30},
+... {"_id":7782,ename:"CLARK",job:"MANAGER",mgcode:7839,hiredate:"09-JUN-81",salary:2450,comm:null,deptno:10}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                7369,
+                7499,
+                7521,
+                7566,
+                7654,
+                7698,
+                7782
+        ]
+}
+> db.emp.drop()
+true
+> db.emp.insertMany([{"_id":7369,ename:"SMITH",job:"CLERK",mgcode:7902,hiredate:"17-DEC-80",salary:810,comm:null,deptno:10},
+... {"_id":7499,ename:"ALLEN",job:"SALESMAN",mgcode:7698,hiredate:"20-FEB-81",salary:1600,comm:300,deptno:30},
+... {"_id":7521,ename:"WARD",job:"SALESMAN",mgcode:7698,hiredate:"22-FEB-81",salary:1250,comm:500,deptno:30},
+... {"_id":7566,ename:"JONES",job:"MANAGER",mgcode:7839,hiredate:"02-APR-81",salary:2975,comm:null,deptno:20},
+... {"_id":7654,ename:"MARTIN",job:"SALESMAN",mgcode:7698,hiredate:"28-SEP-81",salary:1250,comm:1400,deptno:30},
+... {"_id":7698,ename:"BLAKE",job:"MANAGER",mgcode:7839,hiredate:"01-MAY-81",salary:2850,comm:null,deptno:30},
+... {"_id":7782,ename:"CLARK",job:"MANAGER",mgcode:7839,hiredate:"09-JUN-81",salary:2450,comm:null,deptno:10},
+... {"_id":7788,ename:"SCOTT",job:"ANALYST",mgcode:7566,hiredate:"09-DEC-82",salary:3001,comm:null,deptno:20},
+... {"_id":7839,ename:"KING",job:"PRESIDENT",mgcode:null,hiredate:"17-NOV-81",salary:5001,comm:null,deptno:10},
+... {"_id":7844,ename:"TURNER",job:"SALESMAN",mgcode:7698,hiredate:"08-SEP-81",salary:1500,comm:null,deptno:30},
+... {"_id":7876,ename:"ADAMS",job:"CLERK",mgcode:7788,hiredate:"12-JAN-83",salary:1100,comm:null,deptno:20}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                7369,
+                7499,
+                7521,
+                7566,
+                7654,
+                7698,
+                7782,
+                7788,
+                7839,
+                7844,
+                7876
+        ]
+}
+> db.emp.find()
+{ "_id" : 7369, "ename" : "SMITH", "job" : "CLERK", "mgcode" : 7902, "hiredate" : "17-DEC-80", "salary" : 810, "comm" : null, "deptno" : 10 }
+{ "_id" : 7499, "ename" : "ALLEN", "job" : "SALESMAN", "mgcode" : 7698, "hiredate" : "20-FEB-81", "salary" : 1600, "comm" : 300, "deptno" : 30 }
+{ "_id" : 7521, "ename" : "WARD", "job" : "SALESMAN", "mgcode" : 7698, "hiredate" : "22-FEB-81", "salary" : 1250, "comm" : 500, "deptno" : 30 }
+{ "_id" : 7566, "ename" : "JONES", "job" : "MANAGER", "mgcode" : 7839, "hiredate" : "02-APR-81", "salary" : 2975, "comm" : null, "deptno" : 20 }
+{ "_id" : 7654, "ename" : "MARTIN", "job" : "SALESMAN", "mgcode" : 7698, "hiredate" : "28-SEP-81", "salary" : 1250, "comm" : 1400, "deptno" : 30 }
+{ "_id" : 7698, "ename" : "BLAKE", "job" : "MANAGER", "mgcode" : 7839, "hiredate" : "01-MAY-81", "salary" : 2850, "comm" : null, "deptno" : 30 }
+{ "_id" : 7782, "ename" : "CLARK", "job" : "MANAGER", "mgcode" : 7839, "hiredate" : "09-JUN-81", "salary" : 2450, "comm" : null, "deptno" : 10 }
+{ "_id" : 7788, "ename" : "SCOTT", "job" : "ANALYST", "mgcode" : 7566, "hiredate" : "09-DEC-82", "salary" : 3001, "comm" : null, "deptno" : 20 }
+{ "_id" : 7839, "ename" : "KING", "job" : "PRESIDENT", "mgcode" : null, "hiredate" : "17-NOV-81", "salary" : 5001, "comm" : null, "deptno" : 10 }
+{ "_id" : 7844, "ename" : "TURNER", "job" : "SALESMAN", "mgcode" : 7698, "hiredate" : "08-SEP-81", "salary" : 1500, "comm" : null, "deptno" : 30 }
+{ "_id" : 7876, "ename" : "ADAMS", "job" : "CLERK", "mgcode" : 7788, "hiredate" : "12-JAN-83", "salary" : 1100, "comm" : null, "deptno" : 20 }
+> show dbs
+geetha  0.000GB
+local   0.000GB
+> db
+geetha
+> use gee1
+switched to db gee1
+> db
+gee1
+> db.dropDatabase()
+{ "ok" : 1 }
+> db.createcollection("dept")
+2019-08-26T11:57:47.381+0530 E QUERY    [thread1] TypeError: db.createcollection is not a function :
+@(shell):1:1
+
+> db.createCollection("dept")
+{ "ok" : 1 }
+> db
+gee1
+> db.dept.drop()
+true
+> db.dept.users()
+2019-08-26T11:59:06.349+0530 E QUERY    [thread1] TypeError: db.dept.users is not a function :
+@(shell):1:1
+
+> db.users.drop()
+false
+> db.users.insertOne({name:"sam",age:21,status:"pending",color:[red,green,blue]})
+2019-08-26T12:00:54.919+0530 E QUERY    [thread1] ReferenceError: red is not defined :
+@(shell):1:63
+
+> db.users.insertOne({name:"sam",age:21,status:"pending",color:["red","green","blue"]})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5d637cb1fdf43bd91c47305a")
+}
+> db.users.find()
+{ "_id" : ObjectId("5d637cb1fdf43bd91c47305a"), "name" : "sam", "age" : 21, "status" : "pending", "color" : [ "red", "green", "blue" ] }
+> db.users.insertOne({name:"sam",age:21,status:"pending",color:["red","green","blue"],number:[]1,2,3,4]})
+2019-08-26T12:03:54.256+0530 E QUERY    [thread1] SyntaxError: missing } after property list @(shell):1:93
+
+> db.users.insertOne({name:"sam",age:21,status:"pending",color:["red","green","blue"],number:[1,2,3,4]})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5d637d77fdf43bd91c47305b")
+}
+> db.users.insertOne({name:"sam",age:21,status:"pending",color:["red","green","blue"],number:[1,2,3,4],word:["hello","hi"]})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5d637d95fdf43bd91c47305c")
+}
+> db.users.find().pretty()
+{
+        "_id" : ObjectId("5d637cb1fdf43bd91c47305a"),
+        "name" : "sam",
+        "age" : 21,
+        "status" : "pending",
+        "color" : [
+                "red",
+                "green",
+                "blue"
+        ]
+}
+{
+        "_id" : ObjectId("5d637d77fdf43bd91c47305b"),
+        "name" : "sam",
+        "age" : 21,
+        "status" : "pending",
+        "color" : [
+                "red",
+                "green",
+                "blue"
+        ],
+        "number" : [
+                1,
+                2,
+                3,
+                4
+        ]
+}
+{
+        "_id" : ObjectId("5d637d95fdf43bd91c47305c"),
+        "name" : "sam",
+        "age" : 21,
+        "status" : "pending",
+        "color" : [
+                "red",
+                "green",
+                "blue"
+        ],
+        "number" : [
+                1,
+                2,
+                3,
+                4
+        ],
+        "word" : [
+                "hello",
+                "hi"
+        ]
+}
+> db.users.insertOne({"_id" : ObjectId("5d637d77fdf43bd91c47305b"),age:21,status:"pending",color:["red","green","blue"],number:[1,2,3,4],word:["hello","hi"]})
+2019-08-26T12:08:38.908+0530 E QUERY    [thread1] uncaught exception: WriteError({
+        "index" : 0,
+        "code" : 11000,
+        "errmsg" : "E11000 duplicate key error collection: gee1.users index: _id_ dup key: { : ObjectId('5d637d77fdf43bd91c47305b') }",
+        "op" : {
+                "_id" : ObjectId("5d637d77fdf43bd91c47305b"),
+                "age" : 21,
+                "status" : "pending",
+                "color" : [
+                        "red",
+                        "green",
+                        "blue"
+                ],
+                "number" : [
+                        1,
+                        2,
+                        3,
+                        4
+                ],
+                "word" : [
+                        "hello",
+                        "hi"
+                ]
+        }
+}) :
+undefined
+> db.user.save({_id:1,name:"kumar",deptno:20});
+WriteResult({ "nMatched" : 0, "nUpserted" : 1, "nModified" : 0, "_id" : 1 })
+> db.user.save({_id:"hello",name:"kumar",deptno:20});
+WriteResult({ "nMatched" : 0, "nUpserted" : 1, "nModified" : 0, "_id" : "hello" })
+> db.user.save({_id:1,name:"kumar",deptno:20});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 0 })
+> db.users.save({_id:1,name:"kumar",deptno:20});
+WriteResult({ "nMatched" : 0, "nUpserted" : 1, "nModified" : 0, "_id" : 1 })
+> db.users.save({_id:1, name:"kumar", deptno:20});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 0 })
+> db.users.Save({_id:1, name:"kumar", deptno:20});
+2019-08-26T12:26:50.266+0530 E QUERY    [thread1] TypeError: db.users.Save is not a function :
+@(shell):1:1
+
+> db.users.save({_id:1, name:"kumar", deptno:20});
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 0 })
+> db.user.update
+function (query, obj, upsert, multi) {
+    var parsed = this._parseUpdate(query, obj, upsert, multi);
+    var query = parsed.query;
+    var obj = parsed.obj;
+    var upsert = parsed.upsert;
+    var multi = parsed.multi;
+    var wc = parsed.wc;
+
+    var result = undefined;
+    var startTime =
+        (typeof(_verboseShell) === 'undefined' || !_verboseShell) ? 0 : new Date().getTime();
+
+    if (this.getMongo().writeMode() != "legacy") {
+        var bulk = this.initializeOrderedBulkOp();
+        var updateOp = bulk.find(query);
+
+        if (upsert) {
+            updateOp = updateOp.upsert();
+        }
+
+        if (multi) {
+            updateOp.update(obj);
+        } else {
+            updateOp.updateOne(obj);
+        }
+
+        try {
+            result = bulk.execute(wc).toSingleResult();
+        } catch (ex) {
+            if (ex instanceof BulkWriteError || ex instanceof WriteCommandError) {
+                result = ex.toSingleResult();
+            } else {
+                // Other exceptions thrown
+                throw Error(ex);
+            }
+        }
+    } else {
+        this._validateUpdateDoc(obj);
+        this.getMongo().update(this._fullName, query, obj, upsert, multi);
+
+        // enforce write concern, if required
+        if (wc)
+            result = this.runCommand("getLastError", wc instanceof WriteConcern ? wc.toJSON() : wc);
+    }
+
+    this._printExtraInfo("Updated", startTime);
+    return result;
+}
+
+> db.user.update( {"-id":1}, { $set:{ deptno :30} })
+WriteResult({ "nMatched" : 0, "nUpserted" : 0, "nModified" : 0 })
+> db.users.find()
+{ "_id" : ObjectId("5d637cb1fdf43bd91c47305a"), "name" : "sam", "age" : 21, "status" : "pending", "color" : [ "red", "green", "blue" ] }
+{ "_id" : ObjectId("5d637d77fdf43bd91c47305b"), "name" : "sam", "age" : 21, "status" : "pending", "color" : [ "red", "green", "blue" ], "number" : [ 1, 2, 3, 4 ] }
+{ "_id" : ObjectId("5d637d95fdf43bd91c47305c"), "name" : "sam", "age" : 21, "status" : "pending", "color" : [ "red", "green", "blue" ], "number" : [ 1, 2, 3, 4 ], "word" : [ "hello", "hi" ] }
+{ "_id" : 1, "name" : "kumar", "deptno" : 20 }
+> db.user.update( {"_id":1}, { $set:{ deptno :30} })
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.users.update( {"_id":1}, { $set:{ deptno :30} })
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.users.update( {ename:1}, { $set:{ deptno :30} })
+WriteResult({ "nMatched" : 0, "nUpserted" : 0, "nModified" : 0 })
+> db.users.update( {ename:"SMITH"}, { $set:{ deptno :30} })
+WriteResult({ "nMatched" : 0, "nUpserted" : 0, "nModified" : 0 })
+> db.users.update( {ename:"SMITH"}, { $set:{ deptno :20} })
+WriteResult({ "nMatched" : 0, "nUpserted" : 0, "nModified" : 0 })
+> db.mycol.update({'title':'mongodb overview'},{$set:{'title':'new mongodb  tutorial'}},{multi:"true"})
+WriteResult({ "nMatched" : 0, "nUpserted" : 0, "nModified" : 0 })
+> db.mycol.insertOne({title:'mongodb overview'})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5d638669fdf43bd91c47305d")
+}
+> db.mycol.update({'title':'mongodb overview'},{$set:{'title':'new mongodb  tutorial'}},{multi:"true"})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.mycol.find()
+{ "_id" : ObjectId("5d638669fdf43bd91c47305d"), "title" : "new mongodb  tutorial" }
+> db.emp.find()
+> db.emp.insertMany([{"_id":7369,ename:"SMITH",job:"CLERK",mgcode:7902,hiredate:"17-DEC-80",salary:810,comm:null,deptno:10},
+... {"_id":7499,ename:"ALLEN",job:"SALESMAN",mgcode:7698,hiredate:"20-FEB-81",salary:1600,comm:300,deptno:30},
+... {"_id":7521,ename:"WARD",job:"SALESMAN",mgcode:7698,hiredate:"22-FEB-81",salary:1250,comm:500,deptno:30},
+... {"_id":7566,ename:"JONES",job:"MANAGER",mgcode:7839,hiredate:"02-APR-81",salary:2975,comm:null,deptno:20},
+... {"_id":7654,ename:"MARTIN",job:"SALESMAN",mgcode:7698,hiredate:"28-SEP-81",salary:1250,comm:1400,deptno:30},
+... {"_id":7698,ename:"BLAKE",job:"MANAGER",mgcode:7839,hiredate:"01-MAY-81",salary:2850,comm:null,deptno:30},
+... {"_id":7782,ename:"CLARK",job:"MANAGER",mgcode:7839,hiredate:"09-JUN-81",salary:2450,comm:null,deptno:10},
+... {"_id":7788,ename:"SCOTT",job:"ANALYST",mgcode:7566,hiredate:"09-DEC-82",salary:3001,comm:null,deptno:20},
+... {"_id":7839,ename:"KING",job:"PRESIDENT",mgcode:null,hiredate:"17-NOV-81",salary:5001,comm:null,deptno:10},
+... {"_id":7844,ename:"TURNER",job:"SALESMAN",mgcode:7698,hiredate:"08-SEP-81",salary:1500,comm:null,deptno:30},
+... {"_id":7876,ename:"ADAMS",job:"CLERK",mgcode:7788,hiredate:"12-JAN-83",salary:1100,comm:null,deptno:20}])
+{
+        "acknowledged" : true,
+        "insertedIds" : [
+                7369,
+                7499,
+                7521,
+                7566,
+                7654,
+                7698,
+                7782,
+                7788,
+                7839,
+                7844,
+                7876
+        ]
+}
+> db.users.update( {ename:"SMITH"}, { $set:{ deptno :20} })
+WriteResult({ "nMatched" : 0, "nUpserted" : 0, "nModified" : 0 })
+> db.emp.update( {ename:"SMITH"}, { $set:{ deptno :20} })
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.emp.update( {ename:"SMITH"}, { $set:{ deptno :20,comm:500} })
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 1 })
+> db.emp.find()
+{ "_id" : 7369, "ename" : "SMITH", "job" : "CLERK", "mgcode" : 7902, "hiredate" : "17-DEC-80", "salary" : 810, "comm" : 500, "deptno" : 20 }
+{ "_id" : 7499, "ename" : "ALLEN", "job" : "SALESMAN", "mgcode" : 7698, "hiredate" : "20-FEB-81", "salary" : 1600, "comm" : 300, "deptno" : 30 }
+{ "_id" : 7521, "ename" : "WARD", "job" : "SALESMAN", "mgcode" : 7698, "hiredate" : "22-FEB-81", "salary" : 1250, "comm" : 500, "deptno" : 30 }
+{ "_id" : 7566, "ename" : "JONES", "job" : "MANAGER", "mgcode" : 7839, "hiredate" : "02-APR-81", "salary" : 2975, "comm" : null, "deptno" : 20 }
+{ "_id" : 7654, "ename" : "MARTIN", "job" : "SALESMAN", "mgcode" : 7698, "hiredate" : "28-SEP-81", "salary" : 1250, "comm" : 1400, "deptno" : 30 }
+{ "_id" : 7698, "ename" : "BLAKE", "job" : "MANAGER", "mgcode" : 7839, "hiredate" : "01-MAY-81", "salary" : 2850, "comm" : null, "deptno" : 30 }
+{ "_id" : 7782, "ename" : "CLARK", "job" : "MANAGER", "mgcode" : 7839, "hiredate" : "09-JUN-81", "salary" : 2450, "comm" : null, "deptno" : 10 }
+{ "_id" : 7788, "ename" : "SCOTT", "job" : "ANALYST", "mgcode" : 7566, "hiredate" : "09-DEC-82", "salary" : 3001, "comm" : null, "deptno" : 20 }
+{ "_id" : 7839, "ename" : "KING", "job" : "PRESIDENT", "mgcode" : null, "hiredate" : "17-NOV-81", "salary" : 5001, "comm" : null, "deptno" : 10 }
+{ "_id" : 7844, "ename" : "TURNER", "job" : "SALESMAN", "mgcode" : 7698, "hiredate" : "08-SEP-81", "salary" : 1500, "comm" : null, "deptno" : 30 }
+{ "_id" : 7876, "ename" : "ADAMS", "job" : "CLERK", "mgcode" : 7788, "hiredate" : "12-JAN-83", "salary" : 1100, "comm" : null, "deptno" : 20 }
+> db.emp.update( {ename:"SMITH"}, { $set:{ deptno :20,comm:500} })
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 0 })
+> db.users.update( {ename:"SMITH"}, { $set:{ deptno :20}},{upset:"true"})
+WriteResult({ "nMatched" : 0, "nUpserted" : 0, "nModified" : 0 })
+> db.emp.update( {ename:"SMITH"}, { $set:{ deptno :20}},{upset:"true"})
+WriteResult({ "nMatched" : 1, "nUpserted" : 0, "nModified" : 0 })
+> db.emp.update( {ename:"RAJ"}, { $set:{ deptno :20}},{upset:"true"})
+WriteResult({ "nMatched" : 0, "nUpserted" : 0, "nModified" : 0 })
+> db.emp.find()
+{ "_id" : 7369, "ename" : "SMITH", "job" : "CLERK", "mgcode" : 7902, "hiredate" : "17-DEC-80", "salary" : 810, "comm" : 500, "deptno" : 20 }
+{ "_id" : 7499, "ename" : "ALLEN", "job" : "SALESMAN", "mgcode" : 7698, "hiredate" : "20-FEB-81", "salary" : 1600, "comm" : 300, "deptno" : 30 }
+{ "_id" : 7521, "ename" : "WARD", "job" : "SALESMAN", "mgcode" : 7698, "hiredate" : "22-FEB-81", "salary" : 1250, "comm" : 500, "deptno" : 30 }
+{ "_id" : 7566, "ename" : "JONES", "job" : "MANAGER", "mgcode" : 7839, "hiredate" : "02-APR-81", "salary" : 2975, "comm" : null, "deptno" : 20 }
+{ "_id" : 7654, "ename" : "MARTIN", "job" : "SALESMAN", "mgcode" : 7698, "hiredate" : "28-SEP-81", "salary" : 1250, "comm" : 1400, "deptno" : 30 }
+{ "_id" : 7698, "ename" : "BLAKE", "job" : "MANAGER", "mgcode" : 7839, "hiredate" : "01-MAY-81", "salary" : 2850, "comm" : null, "deptno" : 30 }
+{ "_id" : 7782, "ename" : "CLARK", "job" : "MANAGER", "mgcode" : 7839, "hiredate" : "09-JUN-81", "salary" : 2450, "comm" : null, "deptno" : 10 }
+{ "_id" : 7788, "ename" : "SCOTT", "job" : "ANALYST", "mgcode" : 7566, "hiredate" : "09-DEC-82", "salary" : 3001, "comm" : null, "deptno" : 20 }
+{ "_id" : 7839, "ename" : "KING", "job" : "PRESIDENT", "mgcode" : null, "hiredate" : "17-NOV-81", "salary" : 5001, "comm" : null, "deptno" : 10 }
+{ "_id" : 7844, "ename" : "TURNER", "job" : "SALESMAN", "mgcode" : 7698, "hiredate" : "08-SEP-81", "salary" : 1500, "comm" : null, "deptno" : 30 }
+{ "_id" : 7876, "ename" : "ADAMS", "job" : "CLERK", "mgcode" : 7788, "hiredate" : "12-JAN-83", "salary" : 1100, "comm" : null, "deptno" : 20 }
+> db.emp.update( {ename:"RAJ"}, { $set:{ deptno :20}},{upsert:"true"})
+WriteResult({
+        "nMatched" : 0,
+        "nUpserted" : 1,
+        "nModified" : 0,
+        "_id" : ObjectId("5d6388d50dfe4de809386d5b")
+> db.emp.find()
+{ "_id" : 7369, "ename" : "SMITH", "job" : "CLERK", "mgcode" : 7902, "hiredate" : "17-DEC-80", "salary" : 810, "comm" : 500, "deptno" : 20 }
+{ "_id" : 7499, "ename" : "ALLEN", "job" : "SALESMAN", "mgcode" : 7698, "hiredate" : "20-FEB-81", "salary" : 1600, "comm" : 300, "deptno" : 30 }
+{ "_id" : 7521, "ename" : "WARD", "job" : "SALESMAN", "mgcode" : 7698, "hiredate" : "22-FEB-81", "salary" : 1250, "comm" : 500, "deptno" : 30 }
+{ "_id" : 7566, "ename" : "JONES", "job" : "MANAGER", "mgcode" : 7839, "hiredate" : "02-APR-81", "salary" : 2975, "comm" : null, "deptno" : 20 }
+{ "_id" : 7654, "ename" : "MARTIN", "job" : "SALESMAN", "mgcode" : 7698, "hiredate" : "28-SEP-81", "salary" : 1250, "comm" : 1400, "deptno" : 30 }
+{ "_id" : 7698, "ename" : "BLAKE", "job" : "MANAGER", "mgcode" : 7839, "hiredate" : "01-MAY-81", "salary" : 2850, "comm" : null, "deptno" : 30 }
+{ "_id" : 7782, "ename" : "CLARK", "job" : "MANAGER", "mgcode" : 7839, "hiredate" : "09-JUN-81", "salary" : 2450, "comm" : null, "deptno" : 10 }
+{ "_id" : 7788, "ename" : "SCOTT", "job" : "ANALYST", "mgcode" : 7566, "hiredate" : "09-DEC-82", "salary" : 3001, "comm" : null, "deptno" : 20 }
+{ "_id" : 7839, "ename" : "KING", "job" : "PRESIDENT", "mgcode" : null, "hiredate" : "17-NOV-81", "salary" : 5001, "comm" : null, "deptno" : 10 }
+{ "_id" : 7844, "ename" : "TURNER", "job" : "SALESMAN", "mgcode" : 7698, "hiredate" : "08-SEP-81", "salary" : 1500, "comm" : null, "deptno" : 30 }
+{ "_id" : 7876, "ename" : "ADAMS", "job" : "CLERK", "mgcode" : 7788, "hiredate" : "12-JAN-83", "salary" : 1100, "comm" : null, "deptno" : 20 }
+{ "_id" : ObjectId("5d6388d50dfe4de809386d5b"), "ename" : "RAJ", "deptno" : 20 }
+>

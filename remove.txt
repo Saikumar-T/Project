@@ -1,0 +1,237 @@
+> db.users.remove(name:"sam")
+2019-08-26T16:35:40.516+0530 E QUERY    [thread1] SyntaxError: missing ) after argument list @(shell):1:20
+
+> db.users.remove({name:"sam"})
+WriteResult({ "nRemoved" : 3 })
+> db.emp.find({},{"ename":1,_id:0})
+{ "ename" : "SMITH" }
+{ "ename" : "ALLEN" }
+{ "ename" : "WARD" }
+{ "ename" : "JONES" }
+{ "ename" : "MARTIN" }
+{ "ename" : "BLAKE" }
+{ "ename" : "CLARK" }
+{ "ename" : "SCOTT" }
+{ "ename" : "KING" }
+{ "ename" : "TURNER" }
+{ "ename" : "ADAMS" }
+{ "ename" : "RAJ" }
+> db.emp.find({},{"ename":1,_id:0,"sal":1,deptno:1})
+{ "ename" : "SMITH", "deptno" : 20 }
+{ "ename" : "ALLEN", "deptno" : 30 }
+{ "ename" : "WARD", "deptno" : 30 }
+{ "ename" : "JONES", "deptno" : 20 }
+{ "ename" : "MARTIN", "deptno" : 30 }
+{ "ename" : "BLAKE", "deptno" : 30 }
+{ "ename" : "CLARK", "deptno" : 10 }
+{ "ename" : "SCOTT", "deptno" : 20 }
+{ "ename" : "KING", "deptno" : 10 }
+{ "ename" : "TURNER", "deptno" : 30 }
+{ "ename" : "ADAMS", "deptno" : 20 }
+{ "ename" : "RAJ", "deptno" : 20 }
+> db.emp.find({},{"ename":1,_id:0,"salary":1,deptno:1})
+{ "ename" : "SMITH", "salary" : 810, "deptno" : 20 }
+{ "ename" : "ALLEN", "salary" : 1600, "deptno" : 30 }
+{ "ename" : "WARD", "salary" : 1250, "deptno" : 30 }
+{ "ename" : "JONES", "salary" : 2975, "deptno" : 20 }
+{ "ename" : "MARTIN", "salary" : 1250, "deptno" : 30 }
+{ "ename" : "BLAKE", "salary" : 2850, "deptno" : 30 }
+{ "ename" : "CLARK", "salary" : 2450, "deptno" : 10 }
+{ "ename" : "SCOTT", "salary" : 3001, "deptno" : 20 }
+{ "ename" : "KING", "salary" : 5001, "deptno" : 10 }
+{ "ename" : "TURNER", "salary" : 1500, "deptno" : 30 }
+{ "ename" : "ADAMS", "salary" : 1100, "deptno" : 20 }
+{ "ename" : "RAJ", "deptno" : 20 }
+> db.emp.find({},{"ename":1})
+{ "_id" : 7369, "ename" : "SMITH" }
+{ "_id" : 7499, "ename" : "ALLEN" }
+{ "_id" : 7521, "ename" : "WARD" }
+{ "_id" : 7566, "ename" : "JONES" }
+{ "_id" : 7654, "ename" : "MARTIN" }
+{ "_id" : 7698, "ename" : "BLAKE" }
+{ "_id" : 7782, "ename" : "CLARK" }
+{ "_id" : 7788, "ename" : "SCOTT" }
+{ "_id" : 7839, "ename" : "KING" }
+{ "_id" : 7844, "ename" : "TURNER" }
+{ "_id" : 7876, "ename" : "ADAMS" }
+{ "_id" : ObjectId("5d6388d50dfe4de809386d5b"), "ename" : "RAJ" }
+> db.emp.find({},{"ename":1,_id:0,"salary":1,deptno:0})
+Error: error: {
+        "waitedMS" : NumberLong(0),
+        "ok" : 0,
+        "errmsg" : "Projection cannot have a mix of inclusion and exclusion.",
+        "code" : 2
+}
+> db.emp.find({},{"ename":1,"salary":1,deptno:0})
+Error: error: {
+        "waitedMS" : NumberLong(0),
+        "ok" : 0,
+        "errmsg" : "Projection cannot have a mix of inclusion and exclusion.",
+        "code" : 2
+}
+> db.emp.find({},{"ename":1,"salary":1,deptno:1})
+{ "_id" : 7369, "ename" : "SMITH", "salary" : 810, "deptno" : 20 }
+{ "_id" : 7499, "ename" : "ALLEN", "salary" : 1600, "deptno" : 30 }
+{ "_id" : 7521, "ename" : "WARD", "salary" : 1250, "deptno" : 30 }
+{ "_id" : 7566, "ename" : "JONES", "salary" : 2975, "deptno" : 20 }
+{ "_id" : 7654, "ename" : "MARTIN", "salary" : 1250, "deptno" : 30 }
+{ "_id" : 7698, "ename" : "BLAKE", "salary" : 2850, "deptno" : 30 }
+{ "_id" : 7782, "ename" : "CLARK", "salary" : 2450, "deptno" : 10 }
+{ "_id" : 7788, "ename" : "SCOTT", "salary" : 3001, "deptno" : 20 }
+{ "_id" : 7839, "ename" : "KING", "salary" : 5001, "deptno" : 10 }
+{ "_id" : 7844, "ename" : "TURNER", "salary" : 1500, "deptno" : 30 }
+{ "_id" : 7876, "ename" : "ADAMS", "salary" : 1100, "deptno" : 20 }
+{ "_id" : ObjectId("5d6388d50dfe4de809386d5b"), "ename" : "RAJ", "deptno" : 20 }
+> db.emp.find({},{"ename":1,"salary":1,deptno:0})
+Error: error: {
+        "waitedMS" : NumberLong(0),
+        "ok" : 0,
+        "errmsg" : "Projection cannot have a mix of inclusion and exclusion.",
+        "code" : 2
+}
+> db.emp.find({},{"ename":1,"salary":1,deptno:1,_id=0})
+2019-08-26T16:42:12.046+0530 E QUERY    [thread1] SyntaxError: missing : after property id @(shell):1:49
+
+> db.emp.find({},{"ename":1,"salary":1,deptno:1,_id:0})
+{ "ename" : "SMITH", "salary" : 810, "deptno" : 20 }
+{ "ename" : "ALLEN", "salary" : 1600, "deptno" : 30 }
+{ "ename" : "WARD", "salary" : 1250, "deptno" : 30 }
+{ "ename" : "JONES", "salary" : 2975, "deptno" : 20 }
+{ "ename" : "MARTIN", "salary" : 1250, "deptno" : 30 }
+{ "ename" : "BLAKE", "salary" : 2850, "deptno" : 30 }
+{ "ename" : "CLARK", "salary" : 2450, "deptno" : 10 }
+{ "ename" : "SCOTT", "salary" : 3001, "deptno" : 20 }
+{ "ename" : "KING", "salary" : 5001, "deptno" : 10 }
+{ "ename" : "TURNER", "salary" : 1500, "deptno" : 30 }
+{ "ename" : "ADAMS", "salary" : 1100, "deptno" : 20 }
+{ "ename" : "RAJ", "deptno" : 20 }
+> db.emp.find({},{"ename":1,"salary":1,_id:0,deptno:0})
+Error: error: {
+        "waitedMS" : NumberLong(0),
+        "ok" : 0,
+        "errmsg" : "Projection cannot have a mix of inclusion and exclusion.",
+        "code" : 2
+}
+> db.emp.find({},{"ename":1,"salary":1,_id:0})
+{ "ename" : "SMITH", "salary" : 810 }
+{ "ename" : "ALLEN", "salary" : 1600 }
+{ "ename" : "WARD", "salary" : 1250 }
+{ "ename" : "JONES", "salary" : 2975 }
+{ "ename" : "MARTIN", "salary" : 1250 }
+{ "ename" : "BLAKE", "salary" : 2850 }
+{ "ename" : "CLARK", "salary" : 2450 }
+{ "ename" : "SCOTT", "salary" : 3001 }
+{ "ename" : "KING", "salary" : 5001 }
+{ "ename" : "TURNER", "salary" : 1500 }
+{ "ename" : "ADAMS", "salary" : 1100 }
+{ "ename" : "RAJ" }
+> db.emp.find({},{"ename":1,"salary":1})
+{ "_id" : 7369, "ename" : "SMITH", "salary" : 810 }
+{ "_id" : 7499, "ename" : "ALLEN", "salary" : 1600 }
+{ "_id" : 7521, "ename" : "WARD", "salary" : 1250 }
+{ "_id" : 7566, "ename" : "JONES", "salary" : 2975 }
+{ "_id" : 7654, "ename" : "MARTIN", "salary" : 1250 }
+{ "_id" : 7698, "ename" : "BLAKE", "salary" : 2850 }
+{ "_id" : 7782, "ename" : "CLARK", "salary" : 2450 }
+{ "_id" : 7788, "ename" : "SCOTT", "salary" : 3001 }
+{ "_id" : 7839, "ename" : "KING", "salary" : 5001 }
+{ "_id" : 7844, "ename" : "TURNER", "salary" : 1500 }
+{ "_id" : 7876, "ename" : "ADAMS", "salary" : 1100 }
+{ "_id" : ObjectId("5d6388d50dfe4de809386d5b"), "ename" : "RAJ" }
+> db.users.find(
+... {age:{$gt:18}},
+... {name:1,address:1}
+... ).limit(5)
+> db.users.insertOne({name:"hello",address:"tamilnadu",age:21})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5d63bfd4fdf43bd91c47305e")
+}
+> db.users.insertOne({name:"hi",address:"tamilnadu",age:12})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5d63bfe1fdf43bd91c47305f")
+}
+> db.users.find( {age:{$gt:18}}, {name:1,address:1} ).limit(5)
+{ "_id" : ObjectId("5d63bfd4fdf43bd91c47305e"), "name" : "hello", "address" : "tamilnadu" }
+> db.users.find( {age:{$lt:18}}, {name:1,address:1} ).limit(5)
+{ "_id" : ObjectId("5d63bfe1fdf43bd91c47305f"), "name" : "hi", "address" : "tamilnadu" }
+> db.users.find( {age:{$eq:18}}, {name:1,address:1} ).limit(5)
+> db.users.insertOne({name:"hihello",address:"tamilnadu",age:18})
+{
+        "acknowledged" : true,
+        "insertedId" : ObjectId("5d63c011fdf43bd91c473060")
+}
+> db.users.find( {age:{$eq:18}}, {name:1,address:1} ).limit(5)
+{ "_id" : ObjectId("5d63c011fdf43bd91c473060"), "name" : "hihello", "address" : "tamilnadu" }
+> db.users.find( {age:{$ne:18}}, {name:1,address:1} ).limit(5)
+{ "_id" : 1, "name" : "kumar" }
+{ "_id" : ObjectId("5d63bfd4fdf43bd91c47305e"), "name" : "hello", "address" : "tamilnadu" }
+{ "_id" : ObjectId("5d63bfe1fdf43bd91c47305f"), "name" : "hi", "address" : "tamilnadu" }
+> db.users.find({$in {name:1,address:1} ).limit(5)
+...
+...
+>
+> db.users.find( {age:{$ne:18}},$in: {name:1,address:1} ).limit(5)
+2019-08-26T16:51:04.786+0530 E QUERY    [thread1] SyntaxError: missing ) after argument list @(shell):1:33
+
+> db.users.find( {ename:{$eq:"SCOTT"}}, {ename:1,salary:1,deptno:1} ).limit(5)
+> db.users.find( {ename:{$eq:"SCOTT"}}, {"ename":1,"salary":1,deptno:1} ).limit(5)
+> db.emp.find( {ename:{$eq:"SCOTT"}}, {"ename":1,"salary":1,deptno:1} ).limit(5)
+{ "_id" : 7788, "ename" : "SCOTT", "salary" : 3001, "deptno" : 20 }
+
+> db.emp.find( {deptno:{$gt:10}}, {"ename":1,"salary":1,deptno:1} ).limit(5)
+{ "_id" : 7369, "ename" : "SMITH", "salary" : 810, "deptno" : 20 }
+{ "_id" : 7499, "ename" : "ALLEN", "salary" : 1600, "deptno" : 30 }
+{ "_id" : 7521, "ename" : "WARD", "salary" : 1250, "deptno" : 30 }
+{ "_id" : 7566, "ename" : "JONES", "salary" : 2975, "deptno" : 20 }
+{ "_id" : 7654, "ename" : "MARTIN", "salary" : 1250, "deptno" : 30 }
+> db.emp.find({$and:[{deptno:{$gt:10}},{ename:/SCO/}],{"ename":1,"salary":1,deptno:1} ).limit(5)
+...
+...
+>
+> db.users.find({$and:[{ename:/S/},{deptno:{$gt:10}}\}, {"ename":1,"salary":1,deptno:1} ).limit(5)
+...
+...
+> db.users.find({$and:[{ename:/S/},{deptno:{$gt:10}}}, {"ename":1,"salary":1,deptno:1} ).limit(5)
+...
+...
+> db.users.find({$and:[{ename:/S/},{deptno:{$gt:10}}]}, {"ename":1,"salary":1,deptno:1} ).limit(5)
+> db.users.find({$and:[{ename:/S/},{deptno:{$gt:10}}]}, {"ename":1,"salary":1,deptno:1} ).limit(5)
+> db.users.find({ename:/S/}, {"ename":1,"salary":1,deptno:1} ).limit(5)
+> db.EMP.find({$and:[{ename:/S/},{deptno:{$gt:10}}]}, {"ename":1,"salary":1,deptno:1} ).limit(5)
+> db.emp.find({$and:[{ename:/S/},{deptno:{$gt:10}}]}, {"ename":1,"salary":1,deptno:1} ).limit(5)
+{ "_id" : 7369, "ename" : "SMITH", "salary" : 810, "deptno" : 20 }
+{ "_id" : 7566, "ename" : "JONES", "salary" : 2975, "deptno" : 20 }
+{ "_id" : 7788, "ename" : "SCOTT", "salary" : 3001, "deptno" : 20 }
+{ "_id" : 7876, "ename" : "ADAMS", "salary" : 1100, "deptno" : 20 }
+> db.emp.find({$and:[{ename:/S/},{deptno:{$gt:10}}]}, {"ename":1,"salary":1,deptno:1} ).limit(5)
+{ "_id" : 7369, "ename" : "SMITH", "salary" : 810, "deptno" : 20 }
+{ "_id" : 7566, "ename" : "JONES", "salary" : 2975, "deptno" : 20 }
+{ "_id" : 7788, "ename" : "SCOTT", "salary" : 3001, "deptno" : 20 }
+{ "_id" : 7876, "ename" : "ADAMS", "salary" : 1100, "deptno" : 20 }
+> db.emp.find()
+{ "_id" : 7369, "ename" : "SMITH", "job" : "CLERK", "mgcode" : 7902, "hiredate" : "17-DEC-80", "salary" : 810, "comm" : 500, "deptno" : 20 }
+{ "_id" : 7499, "ename" : "ALLEN", "job" : "SALESMAN", "mgcode" : 7698, "hiredate" : "20-FEB-81", "salary" : 1600, "comm" : 300, "deptno" : 30 }
+{ "_id" : 7521, "ename" : "WARD", "job" : "SALESMAN", "mgcode" : 7698, "hiredate" : "22-FEB-81", "salary" : 1250, "comm" : 500, "deptno" : 30 }
+{ "_id" : 7566, "ename" : "JONES", "job" : "MANAGER", "mgcode" : 7839, "hiredate" : "02-APR-81", "salary" : 2975, "comm" : null, "deptno" : 20 }
+{ "_id" : 7654, "ename" : "MARTIN", "job" : "SALESMAN", "mgcode" : 7698, "hiredate" : "28-SEP-81", "salary" : 1250, "comm" : 1400, "deptno" : 30 }
+{ "_id" : 7698, "ename" : "BLAKE", "job" : "MANAGER", "mgcode" : 7839, "hiredate" : "01-MAY-81", "salary" : 2850, "comm" : null, "deptno" : 30 }
+{ "_id" : 7782, "ename" : "CLARK", "job" : "MANAGER", "mgcode" : 7839, "hiredate" : "09-JUN-81", "salary" : 2450, "comm" : null, "deptno" : 10 }
+{ "_id" : 7788, "ename" : "SCOTT", "job" : "ANALYST", "mgcode" : 7566, "hiredate" : "09-DEC-82", "salary" : 3001, "comm" : null, "deptno" : 20 }
+{ "_id" : 7839, "ename" : "KING", "job" : "PRESIDENT", "mgcode" : null, "hiredate" : "17-NOV-81", "salary" : 5001, "comm" : null, "deptno" : 10 }
+{ "_id" : 7844, "ename" : "TURNER", "job" : "SALESMAN", "mgcode" : 7698, "hiredate" : "08-SEP-81", "salary" : 1500, "comm" : null, "deptno" : 30 }
+{ "_id" : 7876, "ename" : "ADAMS", "job" : "CLERK", "mgcode" : 7788, "hiredate" : "12-JAN-83", "salary" : 1100, "comm" : null, "deptno" : 20 }
+{ "_id" : ObjectId("5d6388d50dfe4de809386d5b"), "ename" : "RAJ", "deptno" : 20 }
+
+
+> db.emp.find({$or:[{ename:/S/},{deptno:{$gt:10}}]}, {"ename":1,"salary":1,deptno:1} ).limit(5)
+{ "_id" : 7369, "ename" : "SMITH", "salary" : 810, "deptno" : 20 }
+{ "_id" : 7499, "ename" : "ALLEN", "salary" : 1600, "deptno" : 30 }
+{ "_id" : 7521, "ename" : "WARD", "salary" : 1250, "deptno" : 30 }
+{ "_id" : 7566, "ename" : "JONES", "salary" : 2975, "deptno" : 20 }
+{ "_id" : 7654, "ename" : "MARTIN", "salary" : 1250, "deptno" : 30 }
+
+>db.emp.find({ename:{$in:["SMITH","JONES"]}},{ename:1,deptno:1} ).limit(5)
+{ "_id" : 7369, "ename" : "SMITH", "deptno" : 20 }
+{ "_id" : 7566, "ename" : "JONES", "deptno" : 20 }
